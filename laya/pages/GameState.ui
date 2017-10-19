@@ -1,9 +1,9 @@
 {
     "x":0,
     "type":"View",
-    "selectedBox":4,
-    "selecteID":9,
-    "props":{"width":720,"sceneColor":"#ffffff","height":1280},
+    "selectedBox":1,
+    "selecteID":3,
+    "props":{"width":480,"sceneColor":"#ffffff","height":850},
     "nodeParent":-1,
     "label":"View",
     "isOpen":true,
@@ -15,9 +15,9 @@
         {
             "x":15,
             "type":"Image",
-            "props":{"y":0,"x":0,"width":720,"skin":"comp/gameUI/bg.jpg","sizeGrid":"1,1,1,1","height":1280},
+            "props":{"y":0,"x":0,"width":480,"var":"backGround","skin":"comp/bg.jpg","sizeGrid":"1,1,1,1","height":850},
             "nodeParent":1,
-            "label":"Image",
+            "label":"Image(backGround)",
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
@@ -27,52 +27,26 @@
         },
         {
             "x":15,
-            "type":"Image",
-            "props":{"y":344,"x":135,"width":443,"visible":false,"var":"startTitle","skin":"comp/gameUI/logo.png","height":168},
-            "nodeParent":1,
-            "label":"Image(startTitle)",
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "compId":3,
-            "child":[
-                ]
-        },
-        {
-            "x":15,
             "type":"Button",
-            "props":{"y":769,"x":197,"width":325,"var":"startBtn","stateNum":"2","skin":"comp/gameUI/btn_bg.png","height":121},
+            "props":{"y":563,"x":120,"width":240,"var":"Btn","stateNum":"2","skin":"comp/btn_bg.png","height":82},
             "nodeParent":1,
-            "label":"Button(startBtn)",
+            "label":"Button(Btn)",
             "isOpen":true,
             "isDirectory":true,
             "isAniNode":true,
             "hasChild":true,
-            "compId":4,
+            "compId":3,
             "child":[
                 {
                     "x":30,
                     "type":"Image",
-                    "props":{"y":38,"x":80,"var":"startText","skin":"comp/gameUI/start.png"},
-                    "nodeParent":4,
+                    "props":{"y":19,"x":38,"var":"startText","skin":"comp/start.png"},
+                    "nodeParent":3,
                     "label":"Image(startText)",
                     "isDirectory":false,
                     "isAniNode":true,
                     "hasChild":false,
-                    "compId":5,
-                    "child":[
-                        ]
-                },
-                {
-                    "x":30,
-                    "type":"Image",
-                    "props":{"y":39,"x":86,"var":"reStartText","skin":"comp/gameUI/restart.png"},
-                    "nodeParent":4,
-                    "label":"Image(reStartText)",
-                    "isDirectory":false,
-                    "isAniNode":true,
-                    "hasChild":false,
-                    "compId":9,
+                    "compId":8,
                     "child":[
                         ]
                 }]
@@ -80,26 +54,13 @@
         {
             "x":15,
             "type":"Image",
-            "props":{"y":343,"x":132,"width":456,"visible":false,"var":"overTitle","skin":"comp/gameUI/gameOver.png","height":165},
+            "props":{"y":210,"x":57,"var":"startTitle","skin":"comp/logo.png"},
             "nodeParent":1,
-            "label":"Image(overTitle)",
+            "label":"Image(startTitle)",
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
             "compId":6,
-            "child":[
-                ]
-        },
-        {
-            "x":15,
-            "type":"Image",
-            "props":{"y":335,"x":101,"width":518,"visible":false,"var":"pauseTitle","skin":"comp/gameUI/gamePause.png","height":182},
-            "nodeParent":1,
-            "label":"Image(pauseTitle)",
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "compId":7,
             "child":[
                 ]
         }],
