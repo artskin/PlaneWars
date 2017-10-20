@@ -2,9 +2,9 @@ var Role = function (_super) {
     function Role() {
         Role.super(this);
     }
-    Role.caced = false;
-    Laya.class(Role, 'Role', _super)
-
+    Role.cached = false;
+    Laya.class(Role, "Role", _super);
+    
     var _proto = Role.prototype;
 
     _proto.init = function(type, camp, hp, speed, hitRadius) {
@@ -14,7 +14,9 @@ var Role = function (_super) {
         this.speed = speed;
         this.hitRadius = hitRadius;
 
-        if(!Role.caced) {
+        if(!Role.cached) {
+            Role.cached = true;
+
             Laya.Animation.createFrames([
                 'comp/hero_fly1.png',
                 'comp/hero_fly2.png',
@@ -49,6 +51,13 @@ var Role = function (_super) {
             ],
             'enemy2_fly',
             );
+
+            Laya.Animation.createFrames([
+                'comp/enemy2_hit.png',
+            ],
+            'enemy2_hit',
+            );
+
             Laya.Animation.createFrames([
                 'comp/enemy2_down1.png',
                 'comp/enemy2_down2.png',
@@ -60,9 +69,17 @@ var Role = function (_super) {
 
             Laya.Animation.createFrames([
                 'comp/enemy3_fly1.png',
+                'comp/enemy3_fly2.png',
             ],
             'enemy3_fly',
             );
+
+              Laya.Animation.createFrames([
+                'comp/enemy3_hit.png',
+            ],
+            'enemy3_hit',
+            );
+
             Laya.Animation.createFrames([
                 'comp/enemy3_down1.png',
                 'comp/enemy3_down2.png',
@@ -71,11 +88,11 @@ var Role = function (_super) {
             ],
             'enemy3_down',
             );
-           
         }
-
-        this.body = new Laya.Animation();
-        this.addChild(this.body)
+        if(!this.body) {
+             this.body = new Laya.Animation();
+             this.addChild(this.body)
+        }
 
         this.playAction("fly");
     }
@@ -86,8 +103,5 @@ var Role = function (_super) {
         this.bound = this.body.getBounds();
         this.body.pos(-this.bound.width / 2, -this.bound.height / 2);
     }
-
-   
-
     return Role;
 }(Laya.Sprite);
